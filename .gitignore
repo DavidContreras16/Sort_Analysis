@@ -1,0 +1,16 @@
+build/
+.vs/
+.vscode/
+.idea/
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.exe
+*.o
+*.obj
+*.pdb
+*.ilk
+*.a
+*.lib
