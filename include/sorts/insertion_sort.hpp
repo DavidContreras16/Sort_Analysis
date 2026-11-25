@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include <vector>
 
 inline void insertion_sort(std::vector<int>& data) {
@@ -16,4 +17,12 @@ inline void insertion_sort(std::vector<int>& data) {
 
         data[j + 1] = key;
     }
+}
+
+double ExecInsertionSort(std::vector<int>& data) {
+    auto inicio = std::chrono::steady_clock::now();
+    insertion_sort(data);
+    auto fin = std::chrono::steady_clock::now();
+    std::chrono::duration<double, std::milli> duracion = fin - inicio;
+    return duracion.count();
 }

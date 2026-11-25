@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include <utility>
 #include <vector>
 
@@ -17,4 +18,12 @@ inline void selection_sort(std::vector<int>& data) {
 
         std::swap(data[i], data[min_index]);
     }
+}
+
+double ExecSelectionSort(std::vector<int>& data) {
+    auto inicio = std::chrono::steady_clock::now();
+    selection_sort(data);
+    auto fin = std::chrono::steady_clock::now();
+    std::chrono::duration<double, std::milli> duracion = fin - inicio;
+    return duracion.count();
 }

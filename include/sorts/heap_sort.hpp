@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include <utility>
 #include <vector>
 
@@ -37,4 +38,12 @@ inline void heap_sort(std::vector<int>& data) {
         std::swap(data[0], data[i]);
         sift_down(data, 0, i);
     }
+}
+
+double ExecHeapSort(std::vector<int>& data) {
+    auto inicio = std::chrono::steady_clock::now();
+    heap_sort(data);
+    auto fin = std::chrono::steady_clock::now();
+    std::chrono::duration<double, std::milli> duracion = fin - inicio;
+    return duracion.count();
 }

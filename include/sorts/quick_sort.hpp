@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include <utility>
 #include <vector>
 
@@ -37,4 +38,12 @@ inline void quick_sort(std::vector<int>& data) {
     }
 
     quick_sort_range(data, 0, static_cast<int>(data.size()) - 1);
+}
+
+double ExecQuickSort(std::vector<int>& data) {
+    auto inicio = std::chrono::steady_clock::now();
+    quick_sort(data);
+    auto fin = std::chrono::steady_clock::now();
+    std::chrono::duration<double, std::milli> duracion = fin - inicio;
+    return duracion.count();
 }

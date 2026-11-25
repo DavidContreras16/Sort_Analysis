@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include <vector>
 
 inline void merge_parts(std::vector<int>& data, std::vector<int>& temp, int left, int mid,
@@ -55,4 +56,12 @@ inline void merge_sort(std::vector<int>& data) {
 
     std::vector<int> temp(data.size());
     merge_sort_range(data, temp, 0, static_cast<int>(data.size()) - 1);
+}
+
+double ExecMergeSort(std::vector<int>& data) {
+    auto inicio = std::chrono::steady_clock::now();
+    merge_sort(data);
+    auto fin = std::chrono::steady_clock::now();
+    std::chrono::duration<double, std::milli> duracion = fin - inicio;
+    return duracion.count();
 }
