@@ -47,9 +47,9 @@ void exportToCSV(const std::string& filename, const std::vector<Resultado>& resu
         return;
     }
 
-    archivo << "Algoritmo,N,Tiempo_ms\n";
+    archivo << "Algoritmo;N;Tiempo_ms\n";
     for (const Resultado& resultado : resultados) {
-        archivo << resultado.algoritmo << ',' << resultado.n << ','
+        archivo << resultado.algoritmo << ';' << resultado.n << ';'
                 << std::fixed << std::setprecision(6) << resultado.tiempo << '\n';
     }
 }
