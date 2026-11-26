@@ -47,10 +47,10 @@ void exportToCSV(const std::string& filename, const std::vector<Resultado>& resu
         return;
     }
 
-    archivo << "Algoritmo;N;Tiempo_ms\n";
+    archivo << "Algoritmo,N,Tiempo_ms\n";
     for (const Resultado& resultado : resultados) {
-        archivo << resultado.algoritmo << ';' << resultado.n << ';'
-                << std::fixed << std::setprecision(6) << resultado.tiempo << '\n';
+        archivo << resultado.algoritmo << ',' << resultado.n << ',' << std::fixed
+                << std::setprecision(6) << resultado.tiempo << '\n';
     }
 }
 
@@ -91,9 +91,10 @@ int main() {
     Sortear("Heap Sort", arr_2, ExecHeapSort, resultados);
     Sortear("Quick Sort", arr_2, ExecQuickSort, resultados);
 
-    // Los algoritmos O(n^2) solo se ejecutan hasta N = 50,000.
-    // En los tamanos grandes se miden solo Merge, Heap y Quick Sort.
     std::cout << "\nN = " << arr_3.size() << '\n';
+    Sortear("Bubble Sort", arr_3, ExecBubbleSort, resultados);
+    Sortear("Insertion Sort", arr_3, ExecInsertionSort, resultados);
+    Sortear("Selection Sort", arr_3, ExecSelectionSort, resultados);
     Sortear("Merge Sort", arr_3, ExecMergeSort, resultados);
     Sortear("Heap Sort", arr_3, ExecHeapSort, resultados);
     Sortear("Quick Sort", arr_3, ExecQuickSort, resultados);
