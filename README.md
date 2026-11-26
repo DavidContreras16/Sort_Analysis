@@ -63,17 +63,17 @@ Las implementaciones son header-only.
 .\build\sort_analysis.exe
 ```
 
-El programa genera arreglos aleatorios con `N = 1,000`, `50,000`, `1,000,000`,
-`10,000,000` y `100,000,000`, y muestra el tiempo de ejecucion de cada
-algoritmo en milisegundos.
+El programa genera arreglos aleatorios con `N = 10,000`, `500,000`,
+`1,000,000`, `10,000,000` y `100,000,000`, y muestra el tiempo de ejecucion de
+cada algoritmo en milisegundos.
 
 Cada algoritmo recibe una copia del mismo arreglo original. Los algoritmos
-O(n^2) solo se ejecutan hasta `N = 50,000`; para los tamanos mayores se miden
-Merge Sort, Heap Sort y Quick Sort.
+O(n^2) se ejecutan hasta `N = 1,000,000`; para `N = 10,000,000` y
+`N = 100,000,000` solo se miden Merge Sort, Heap Sort y Quick Sort.
 
 Al finalizar, los resultados se guardan en `data/resultados.csv` con las
-columnas `Algoritmo`, `N` y `Tiempo_ms`, separadas por punto y coma. El archivo
-se puede abrir directamente con Excel.
+columnas `Algoritmo`, `N` y `Tiempo_ms`. El archivo se puede abrir con Excel o
+con cualquier editor de hojas de calculo.
 
 Ejemplo de salida:
 

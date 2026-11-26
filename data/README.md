@@ -41,13 +41,13 @@ entrada para `scripts/graficar.py`.
   del arreglo y la copia quedan fuera.
 - Se hace una sola repeticion por algoritmo y tamano; no se promedian varias
   corridas.
-- `N = 1,000` y `N = 50,000` se miden con los seis algoritmos. Para
-  `N = 1,000,000`, `10,000,000` y `100,000,000` solo se miden Merge, Heap y
-  Quick Sort.
+- `N = 10,000`, `N = 500,000` y `N = 1,000,000` se miden con los seis
+  algoritmos. Para `N = 10,000,000` y `N = 100,000,000` solo se miden Merge,
+  Heap y Quick Sort.
 - Con `N = 100,000,000` cada arreglo ocupa 400 MB y el pico de memoria es de
   aproximadamente 1.2 GB, por lo que los datos caben en RAM y no hay swap.
 
-## Por que faltan los algoritmos O(n^2) en los tamanos grandes
+## Por que los algoritmos O(n^2) no se miden en 10M ni 100M
 
 Pasar de 50,000 a 100,000,000 es 2000 veces mas datos. En un algoritmo O(n^2)
 el tiempo crece con el cuadrado, es decir, 4,000,000 veces. Con los tiempos
@@ -61,8 +61,8 @@ medidos a 50,000:
 
 Las estimaciones usan el tiempo medido a 50,000 y crecimiento cuadratico. En la
 practica pueden ser peores porque a partir de 10M el arreglo ya no cabe en
-cache. Por eso el benchmark no ejecuta esos algoritmos en los tamanos grandes:
-el programa tardaria dias o meses en terminar.
+cache. Por eso el benchmark mide los O(n^2) hasta `N = 1,000,000` y los omite en
+10M y 100M: ahi el programa tardaria dias o meses en terminar.
 
 Los tres algoritmos O(n log n) si se midieron hasta 100M. En la ultima ejecucion
 registrada:
