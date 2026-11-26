@@ -27,9 +27,16 @@ Sort_Analysis/
 ├── src/
 │   └── main.cpp
 ├── scripts/
+│   ├── graficar.py
 │   └── requirements.txt
 ├── data/
+│   ├── README.md
+│   └── resultados.csv
 └── results/
+    ├── README.md
+    ├── tiempo_vs_n.png
+    ├── comparacion_por_n.png
+    └── crecimiento_por_complejidad.png
 ```
 
 ## Uso
@@ -79,3 +86,13 @@ Merge Sort       N = 1000  T = 0.092500 ms
 Heap Sort        N = 1000  T = 0.084000 ms
 Quick Sort       N = 1000  T = 0.063200 ms
 ```
+
+## Analisis
+
+```powershell
+python scripts/graficar.py
+```
+
+El script lee `data/resultados.csv` y genera las graficas en `results/`. Las
+especificaciones del equipo y la metodologia de medicion estan documentadas en
+`data/README.md`; las graficas se muestran en `results/README.md`.
