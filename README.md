@@ -64,6 +64,10 @@ Cada algoritmo recibe una copia del mismo arreglo original. Los algoritmos
 O(n^2) solo se ejecutan hasta `N = 50,000`; para los tamanos mayores se miden
 Merge Sort, Heap Sort y Quick Sort.
 
+Al finalizar, los resultados se guardan en `data/resultados.csv` con las
+columnas `Algoritmo`, `N` y `Tiempo_ms`. El archivo se puede abrir directamente
+con Excel.
+
 Ejemplo de salida:
 
 ```text
